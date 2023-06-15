@@ -111,7 +111,7 @@ function checkQRCode(){
   var imageData = ctx.getImageData( 0, 0, canvas.width, canvas.height );
   var code = jsQR( imageData.data, canvas.width, canvas.height );
   if( code ){
-    //console.log( code );
+    //アラート文;
     alert( code.data );
   }else{
     alert( "No QR Code found." );
@@ -125,7 +125,11 @@ function checkQRCode(){
   <h1>Web QRCode</h1>
   <p>リサイズ前画像 <span id="src-width-height">幅: 高さ: </span></p>
   <p>リサイズ後画像 <span id="dst-width-height">幅: 高さ: </span></p>
-  <p><form id="form1" enctype="multipart/form-data"><input type="file" accept="image/*" capture="camera" name="file" id="file-image"/></form></p>
+  <p>
+    <form id="form1" enctype="multipart/form-data">
+      <input type="file" accept="image/*" capture="camera" name="file" id="file-image"/>
+    </form>
+  </p>
   <div>
     <canvas id="mycanvas"></canvas>
   </div>
